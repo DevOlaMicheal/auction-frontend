@@ -1,0 +1,16 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+input {
+  @apply border border-gray-300 py-3 px-3 rounded-xl w-full my-2;
+}
+
+button[class="authbtn"] {
+  @apply bg-primary py-3 w-full rounded-lg text-white font-semibold
+}
+
+
+button[class="socialauth"] {
+  @apply py-2 w-full rounded-lg font-semibold border border-gray-800 my-2 flex justify-between items-center px-3
+}
