@@ -8,6 +8,10 @@ export default {
     extend: {
       colors: {
         primary: '#ff385c'
+      },
+
+      fontFamily: {
+        primary: ['Quicksand']
       }
     },
   },
