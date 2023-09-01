@@ -9,31 +9,59 @@ export const useRegisterandLogin = () => {
     const [error, setError] = useState(null)
     const [pending, setPending] = useState(false)
     const register = async ( firstname, lastname, email, password) => {
-    setPending(true)
-    setError(null)
-    try {
-        const response  = await axios.post('/api/auction/signup', {
-            firstname,
-            lastname,
-            email,
-            password
-        })
+        setPending(true)
+        setError(null)
+        try {
+            const response  = await axios.post('/api/auction/signup', {
+                firstname,
+                lastname,
+                email,
+                password
+            })
 
-        const user = response.data
-        
-        setPending(false)
-        // console.log(user)
-        dispatch({type: 'LOGIN', payload: user})
-        navigate('/account')
+            const user = response.data
 
-        // console.log(user)
-    } catch (error) {
-        const errormsg = error.response.data
-        setError(errormsg.error)
-        setPending(false)
+            
+            setPending(false)
+            // console.log(user)
+            // dispatch({type: 'LOGIN', payload: user})
+            navigate('/verify-email')
+
+            // console.log(user)
+        } catch (error) {
+            const errormsg = error.response.data
+            setError(errormsg.error)
+            setPending(false)
+
+        }
 
     }
 
+    const verifyEmail = async (code) => {
+        setPending(true)
+        setError(null)
+        try {
+            const response  = await axios.post('/api/auction/verifyEmail', {
+                code
+            })
+
+            const user = response.data
+
+            
+            setPending(false)
+            console.log(response)
+            dispatch({type: 'LOGIN', payload: user})
+            navigate('/')
+
+            // console.log(user)
+
+        } catch (error) {
+            console.log(error.response)
+            const errormsg = error.response.data
+            setError(errormsg.error)
+            setPending(false)
+
+        }
     }
 
     const login = async ( email, password) => {
@@ -66,5 +94,5 @@ export const useRegisterandLogin = () => {
     
         }
     
-    return {register, login, error, pending}
+    return {register, login, verifyEmail, error, pending}
 }

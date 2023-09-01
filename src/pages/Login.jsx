@@ -26,10 +26,14 @@ function Login() {
 
             </div>
             <form onSubmit={handlelogin} className='p-5'>
-                <div className="text-xl font-semibold p-2">Welcome to olabnb!</div>
-                { error && ( <div className="error my-3 p-5 bg-red-300 text-center rounded-lg">
-                {error}
-            </div>)}
+                <div className="text-xl font-semibold p-2 text-center">Sign in to your Auction account!</div>
+                { error && (
+                <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative my-4" role="alert">
+                <span className="block sm:inline">{error}.</span>
+                
+              </div>
+              
+             )}
 
                 <input type="email" name="" placeholder='Email' value={email} onChange={(e) => setEmail(e.target.value)}  />
                 <input type="password" name="" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)}  />

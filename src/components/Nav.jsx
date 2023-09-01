@@ -2,6 +2,7 @@ import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { AppContext } from "../App";
 import { useUserContext } from "../hooks/useuserContext";
+
 function Nav() {
 
   const {user, ready, dispatch} = useUserContext()
@@ -13,9 +14,10 @@ function Nav() {
   return (
 
 
-    <div className="sticky top-0 z-10 bg-white mb-5">
+    
+    <div className="sticky top-0 z-10 bg-white shadow-md">
 
-      <div className="flex flex-wrap justify-between py-5 px-4 items-center border-b">
+      <div className="flex flex-wrap justify-between py-4 px-4 items-center border-b">
         <div className="flex items-center gap-1">
           <img src={logo} alt="" style={{ height: "30px" }} />
           <Link to="/" className="font-bold text-2xl text-[#ff385c]">
@@ -47,7 +49,7 @@ function Nav() {
         </div>
 
         <div className="flex gap-4 items-center">
-          <div className="font-semibold text-gray-800 hidden">Sell your home easily</div>
+          <div className="font-semibold text-gray-800 ">Sell your home easily</div>
           <div className="flex items-center gap-2">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -115,17 +117,9 @@ function Nav() {
 
         </div>
     </div>
-
-<div className="py-4">
-    <div className="flex-row container mx-auto">
-        <button className="flex gap-1 items-center border border-gray-500 rounded-lg py-2 px-4">filters
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
-        <path strokeLinecap="round" strokeLinejoin="round" d="M6 13.5V3.75m0 9.75a1.5 1.5 0 010 3m0-3a1.5 1.5 0 000 3m0 3.75V16.5m12-3V3.75m0 9.75a1.5 1.5 0 010 3m0-3a1.5 1.5 0 000 3m0 3.75V16.5m-6-9V3.75m0 3.75a1.5 1.5 0 010 3m0-3a1.5 1.5 0 000 3m0 9.75V10.5" />
-      </svg>
-      </button>
-      </div>
-      </div>
     </div>
+
+
   );
 }
 

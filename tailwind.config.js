@@ -11,7 +11,8 @@ export default {
       },
 
       fontFamily: {
-        primary: ['Quicksand']
+        primary: ['Quicksand'],
+        work: ['Work Sans']
       }
     },
   },

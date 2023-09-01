@@ -13,6 +13,8 @@ import ProfilePage from "./pages/AccountComponents/ProfilePage"
 import AddHomeForm from "./pages/AccountComponents/myHomes/AddHomeForm"
 import Saved from "./pages/Saved"
 import Footer from "./components/footer"
+import PropertyDetails from "./pages/PropertyDetails"
+import VerifyEmail from "./pages/VerifyEmail"
 
 export const AppContext = createContext()
 
@@ -35,7 +37,7 @@ function App() {
         
         
         <Route index element={<Home />} />
-        <Route path="/all-properties/:id" element={<Home />} />
+        <Route path="/properties/:id" element={<PropertyDetails />} />
 
         <Route path='/login' element={<Login />} />
         <Route path='/register' element={<Signup />} />
@@ -43,7 +45,7 @@ function App() {
         <Route path='/account/saved' element={<Saved />} />
         <Route path='/account/myproperties' element={<MyAccomodations />} />
         <Route path='/account/myproperties/new' element={<AddHomeForm />} />
-
+        <Route path="/verify-email" element={<VerifyEmail /> } />
 
 
 

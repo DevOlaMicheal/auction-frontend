@@ -25,14 +25,18 @@ function Signup() {
         <div className="my-10 rounded-md max-w-md">
             <div className='py-2 my-2 border-b'>
             <h1 className='text-1xl font-semibold text-center'>Log in or signup</h1>
-
-            { error && ( <div className="error my-3 p-3">
-                {error}
-            </div>)}
+            
 
             </div>
             <form action="" className='p-5' onSubmit={handleSignup}>
-                <div className="text-xl font-semibold p-2">Welcome to olabnb!</div>
+                <div className="text-xl font-semibold p-2 text-center">Create an Acccount!</div>
+                { error && (
+                <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative my-4" role="alert">
+                <span className="block sm:inline">{error}.</span>
+                
+              </div>
+              
+             )}
 
                 <input type="text" name="" placeholder='Firstname' value={firstname} onChange={(e) => setFirstname(e.target.value)} />
                 <input type="text" name="" placeholder="Lastname" value={lastname} onChange={(e) => setLastname(e.target.value)} />
