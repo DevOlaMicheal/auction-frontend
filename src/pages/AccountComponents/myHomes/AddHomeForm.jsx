@@ -44,11 +44,26 @@ function AddHomeForm() {
 
   return (
 
-    
+  <div className="bg-slate-100 min-h-screen">
     <div className="container mx-auto py-4">
       <Accountheader />
       {/* <Accountheader /> */}
+
+    <div className="mx-auto bg-white shadow-md p-4 rounded md:w-2/3">
+      <div className="flex pb-4 px-4 justify-between">
+        <div className="border border-primary rounded-full flex py-2 px-4 font-semibold bg-primary text-white">1</div> 
+        {/* <div className="border-b-2"></div> */}
+        <hr className="boder" />
+        <div className="opacity-50 border border-primary rounded-full flex py-2 px-4 font-semibold">2</div>
+        <div className="opacity-50 border border-primary rounded-full flex py-2 px-4 font-semibold">3</div>
+        
+      </div>
+
       <form className="px-2" onSubmit={handleSubmit}>
+
+        <div className="grid md:grid-cols-2 gap-3 my-6">
+
+        <div>
         <label htmlFor="title pl-2" className="labelfornew">
           Property name
         </label>
@@ -60,6 +75,7 @@ function AddHomeForm() {
           value={title}
           onChange={(e) => setTitle(e.target.value)}
         />
+        
         <label htmlFor="adress" className="labelfornew">
           Property adress
         </label>
@@ -70,20 +86,15 @@ function AddHomeForm() {
           value={adress}
           onChange={(e) => setAdress(e.target.value)}
         />
-        <UploadImages images={images} setImages={setImages} />
-        <label htmlFor="description" className="labelfornew">
-          Description
-          <div className="text-sm text-gray-400">
-            *Add a detailed Description about your appartment
-          </div>
-        </label>
-        <textarea 
-          value={description}
-          onChange={(e) => setDescription(e.target.value)}
-         />
-        <Features features={features} setFeatures={setFeatures} />
+        </div>
 
-        <label htmlFor="description" className="labelfornew">
+        <div className="border border-black w-full">
+
+        </div>
+        </div>
+
+{/* 
+      <label htmlFor="description" className="labelfornew">
           Extra information
           <div className="text-sm text-gray-400">
             *Extra information about features and other pro's of your appartment
@@ -94,6 +105,20 @@ function AddHomeForm() {
             onChange={(e) => setExtraInfo(e.target.value)}
   
         />
+         */}
+        {/* <UploadImages images={images} setImages={setImages} />
+        <label htmlFor="description" className="labelfornew">
+          Description
+          <div className="text-sm text-gray-400">
+            *Add a detailed Description about your appartment
+          </div>
+        </label>
+        <textarea 
+          value={description}
+          onChange={(e) => setDescription(e.target.value)}
+         /> */}
+        {/* <Features features={features} setFeatures={setFeatures} />
+
 
         <div className="flex gap-3 w-full">
           <div className='w-1/2'>
@@ -110,9 +135,17 @@ function AddHomeForm() {
             <input type="number" name="" id="" value={price} onChange={(e) => setPrice(e.target.value)} />
           </div>
         </div>
-        
-        <button className="primary">Auction</button>
+         */}
+
+         <div className="flex justify-between px-2">
+         <button className="border border-slate-700 py-3 px-6 rounded">Back</button>
+         <button className="border border-primary py-3 px-6 text-primary font-semibold rounded cursor-not-allowed" disabled="true">proceed</button>
+
+         </div>
       </form>
+
+      </div>
+    </div>
     </div>
   );
 }
