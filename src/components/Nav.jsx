@@ -15,16 +15,16 @@ function Nav() {
 
 
     
-    <div className="sticky top-0 z-10 bg-white shadow-sm">
+    <div className="sticky top-0 z-10 bg-[#f9fafb] shadow-sm">
 
       <div className="flex flex-wrap justify-between py-4 px-4 items-center border-b">
         <div className="flex items-center gap-1">
-          <img src={logo} alt="" style={{ height: "30px" }} />
-          <Link to="/" className="font-bold text-2xl text-[#ff385c]">
-            uction
+          {/* <img src={logo} alt="" style={{ height: "30px" }} /> */}
+          <Link to="/" className="font-bold text-2xl text-primary">
+            Auction.<span className="text-sm font-semibold">ng</span>
           </Link>
         </div>
-        <div className="flex gap-2 border border-gray-300 rounded-full py-2 px-4 shadow-md shadow-gray-300">
+        <div className="hidden gap-2 border border-gray-300 rounded-full py-2 px-4 shadow-md shadow-gray-300 md:flex">
           <div className="font-semibold text-gray-800">Anywhere</div>
           <div className="border-l border-gray-300"></div>
           <div className="font-semibold text-gray-800">Anyweek</div>
@@ -49,7 +49,7 @@ function Nav() {
         </div>
 
         <div className="flex gap-4 items-center">
-          <div className="font-semibold text-gray-800 ">Sell your home easily</div>
+          <div className="font-semibold text-gray-800 hidden md:flex">Sell your landed props swiftly</div>
           <div className="flex items-center gap-2">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -67,8 +67,20 @@ function Nav() {
             </svg>
 
 
-              <Link to="/account" className="flex space-x-2 items-center">
-                
+            {
+              !user && (
+                <div className="flex gap-3 items-center">
+                  <Link to="/login"><button className="py-2 px-6 rounded-lg bg-primary text-white">sign in</button></Link>
+                 <Link to="/register"> <button className="py-2 px-6 rounded-lg border border-primary text-primary">sign up</button></Link>
+
+                </div>
+              )
+            }
+
+
+              <Link to="/account" className=" space-x-2 items-center hidden">
+              
+
             <div className="flex gap-2 items-center py-2 px-4 border border-gray-300 rounded-full">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
