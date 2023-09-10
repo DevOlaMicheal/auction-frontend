@@ -77,8 +77,10 @@ function Nav() {
               )
             }
 
-
-              <Link to="/account" className=" space-x-2 items-center hidden">
+{
+  user && (
+ 
+              <Link to="/account" className="flex space-x-2 items-center">
               
 
             <div className="flex gap-2 items-center py-2 px-4 border border-gray-300 rounded-full">
@@ -124,7 +126,9 @@ function Nav() {
               
             </div>
           </Link>
-
+   
+   )
+  }
           </div>
 
         </div>
