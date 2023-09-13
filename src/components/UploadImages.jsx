@@ -1,6 +1,6 @@
 import {useState} from 'react'
 import axios from "axios";
-import loading from '../../../assets/loading1.svg'
+// import loading from '../../../assets/loading1.svg'
 
 function UploadImages({images, setImages}) {
     const [imageLink, setImageLink] = useState("");

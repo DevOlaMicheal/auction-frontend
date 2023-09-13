@@ -1,22 +1,20 @@
 import Nav from "./components/Nav"
-import logo from '../src/assets/logo.png'
 import Login from "./pages/Login"
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom"
 import Home from "./pages/Home"
 import Signup from "./pages/Signup"
 import axios from 'axios'
-import { createContext } from "react"
 import UserAccount from "./pages/UserAccount"
 import { useUserContext } from "./hooks/useuserContext"
 import MyAccomodations from "./pages/MyAccomodations"
 import ProfilePage from "./pages/AccountComponents/ProfilePage"
-import AddHomeForm from "./pages/AccountComponents/myHomes/AddHomeForm"
+import AddHomeForm from "./pages/AddHomeForm"
 import Saved from "./pages/Saved"
 import Footer from "./components/footer"
 import PropertyDetails from "./pages/PropertyDetails"
 import VerifyEmail from "./pages/VerifyEmail"
+import { FormContextProvider } from "./context/FormContext"
 
-export const AppContext = createContext()
 
 axios.defaults.baseURL = 'http://localhost:4000'
 axios.defaults.withCredentials = true
@@ -28,10 +26,13 @@ function App() {
 
     <div className="font-primary">
 
-      <AppContext.Provider value={{logo}}>
+  
+
       <BrowserRouter>
       
-        <Nav />
+      <div className="min-h-screen bg-slate-100">
+        
+      <Nav />
 
       <Routes>
         
@@ -44,16 +45,24 @@ function App() {
         <Route path='/account' element={<ProfilePage />} />
         <Route path='/account/saved' element={<Saved />} />
         <Route path='/account/myproperties' element={<MyAccomodations />} />
-        <Route path='/account/myproperties/new' element={<AddHomeForm />} />
+        <Route path='/account/myproperties/new' element={
+        <FormContextProvider>
+        <AddHomeForm />
+        </FormContextProvider>
+        
+        } />
         <Route path="/verify-email" element={<VerifyEmail /> } />
 
 
 
       </Routes>
+
+      </div>
+
       </BrowserRouter>
-      </AppContext.Provider>
     
-    {/* <Footer /> */}
+    
+    <Footer />
     </div>
 
   )

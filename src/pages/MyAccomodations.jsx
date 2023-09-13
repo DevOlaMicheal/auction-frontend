@@ -1,5 +1,5 @@
 import { Link, useParams } from "react-router-dom";
-import AddHomeForm from "./AccountComponents/myHomes/AddHomeForm";
+import AddHomeForm from "./AddHomeForm";
 import Accountheader from "./AccountComponents/Accountheader";
 import { useEffect, useState } from "react";
 import axios from "axios";

@@ -29,3 +29,6 @@ label[class="labelfornew"] {
 label[class="features"]{
   @apply border rounded-md flex  gap-2 p-3 items-center cursor-pointer;
 }
+.box{
+  @apply  border rounded-md px-3 py-4 transition duration-200 hover:scale-95
+}
