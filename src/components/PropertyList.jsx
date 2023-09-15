@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom"
 
 function PropertyList({properties, priceFormarter}) {
+  const uri = "https://auction-testv1.onrender.com/"
 
   const truncateText = (text, max) => {
     const words = text.split(' ')
@@ -28,7 +29,7 @@ function PropertyList({properties, priceFormarter}) {
             <div className="">
             
             
-            <img src={`http://localhost:4000/${property.images[0]}`} className="flex rounded-t-md w-full object-cover aspect-square max-h-40" alt="" />
+            <img src={uri + property.images[0]} className="flex rounded-t-md w-full object-cover aspect-square max-h-40" alt="" />
             </div>
 
             <div className="px-4 py-2">

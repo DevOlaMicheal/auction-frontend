@@ -1,12 +1,16 @@
 import {useState} from 'react'
 import axios from "axios";
 import { useFormContext } from '../context/FormContext';
+
 // import loading from '../../../assets/loading1.svg'
 
 function UploadImages() {
+
+    const uri = "https://auction-testv1.onrender.com/"
+
     const [imageLink, setImageLink] = useState("");
     const [pending, setPending] = useState(false)
-
+  
     const {images, setImages} = useFormContext()
 
     const addImgBylink = async (e) => {
@@ -80,7 +84,7 @@ function UploadImages() {
         
               <div className="h-32 flex relative" key={image + Math.random(0, 9)}>
               
-                <img className="rounded-lg h-15 w-full object-cover" src={'http://localhost:4000/'+image} alt="" /> 
+                <img className="rounded-lg h-15 w-full object-cover" src={uri+image} alt="" /> 
                 {/* {image} */}
 
                 <button className="cursor-pointer absolute bottom-2 right-2 bg-black bg-opacity-60 text-white p-1 rounded-2xl" onClick={(e) => filterImage(e,image)}>
