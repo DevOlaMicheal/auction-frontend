@@ -4,12 +4,12 @@ import HeroImg from "../assets/images/homes3.jpg";
 function HeroHome() {
   return (
     <div>
-      <div className="hero w-full mx-0 h-96 bg-center bg-cover mb-6 bg-primary">
-        <div className="pt-20 flex flex-col gap-3 items-center">
-          <div className="text-4xl font-bold opacity-100 text-center text-slate-100 shadow-sm w-2/3">
+      <div className="hero w-full mx-0 pb-4bg-cover mb-6 bg-primary h-96 flex items-center justify-center p-4">
+        <div className="flex flex-col gap-3">
+          <div className="text-4xl text-center font-bold opacity-100 text-slate-100 shadow-sm">
             Buy or Sell landed properties seamlessly
           </div>
-          <p className="text-xl text-center text-white font-normal mt-8 flex items-center gap-1 mb-2">
+          <p className="text-white font-semibold mt-8 flex items-center justify-center  gap-1 mb-2">
             Find Homes/land in{" "}
             <span className="py-1 bg-gray-700 px-2 flex items-center justify-center gap-1">
               <svg
@@ -35,7 +35,7 @@ function HeroHome() {
             </span>{" "}
           </p>
 
-          <div className="flex justify-between gap-2 border bg-white rounded-full py-2 px-3 mx-2 w-2/3 md:w-1/2">
+          <div className="flex justify-between gap-2 border bg-white rounded-full py-2 px-3 mx-2">
             <input
               type=""
               className="w-full px-4"
