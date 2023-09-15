@@ -3,8 +3,13 @@ import { useUserContext } from '../hooks/useuserContext';
 import profileImg from "../assets/faith.jpg";
 
 const UserBio = () => {
-  const { user, ready, dispatch } = useUserContext();
+  const { user} = useUserContext();
 
+  const changeDp = (e) => {
+    const file = e.target.files
+
+    console.log(file);
+  }
     
     return (
         <div className="bg-white w-full p-6 rounded shadow-sm max-h-[32rem] overflow-auto">
@@ -16,7 +21,8 @@ const UserBio = () => {
                   alt="Profile"
                   className="w-full object-cover"
                 />
-                <div className="absolute inset-0 flex items-end justify-center p-4 bg-black bg-opacity-25">
+                <label className="absolute inset-0 flex items-end justify-center p-4 bg-black bg-opacity-25">
+                  <input type="file" className='hidden' onChange={changeDp} />
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
@@ -31,7 +37,7 @@ const UserBio = () => {
                       d="M12 16.5V9.75m0 0l3 3m-3-3l-3 3M6.75 19.5a4.5 4.5 0 01-1.41-8.775 5.25 5.25 0 0110.233-2.33 3 3 0 013.758 3.848A3.752 3.752 0 0118 19.5H6.75z"
                     />
                   </svg>
-                </div>
+                </label>
               </div>
             </div>
 

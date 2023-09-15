@@ -21,6 +21,16 @@ axios.defaults.withCredentials = true
 
 function App() {
 
+    const {user, ready} = useUserContext()
+
+    if(!ready) {
+      return (
+        <div className="min-h-screen flex items-center justify-center"> 
+          <div className="font-bold text-white">AUCTION</div>
+        </div>
+      )
+    }
+    
 
   return (
 
@@ -40,7 +50,7 @@ function App() {
         <Route index element={<Home />} />
         <Route path="/properties/:id" element={<PropertyDetails />} />
 
-        <Route path='/login' element={<Login />} />
+        <Route path='/login' element={ !user ? <Login /> : <Navigate to={'/'} />} />
         <Route path='/register' element={<Signup />} />
         <Route path='/account' element={<ProfilePage />} />
         <Route path='/account/saved' element={<Saved />} />

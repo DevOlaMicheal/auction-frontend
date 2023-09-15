@@ -21,7 +21,7 @@ function Signup() {
     }
 
   return (
-    <div className=' container max-w-screen-sm creen login-form h-screen p-5 flex flex-col items-center justify-around mx-auto md:max-w-screen-md'>
+    <div className='container login-form h-screen p-5 flex flex-col items-center justify-around mx-auto md:max-w-screen-md'>
         <div className="my-10 rounded-md max-w-md">
             <div className='py-2 my-2 border-b'>
             <h1 className='text-1xl font-semibold text-center'>Log in or signup</h1>

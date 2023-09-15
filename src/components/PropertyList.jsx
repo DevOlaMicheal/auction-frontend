@@ -1,34 +1,43 @@
 import { Link } from "react-router-dom"
 
 function PropertyList({properties, priceFormarter}) {
+
+  const truncateText = (text, max) => {
+    const words = text.split(' ')
+    if(words.length > max) {
+      return words.slice(0, max).join(' ') + '...'
+    }
+
+    return text
+  }
   return (
-    <div className="grid grid-cols-2 md:grid-cols-3 gap-x-6 gap-y-8 lg:grid-cols-4">
+    <div className="grid grid-cols-2 md:grid-cols-3 gap-x-4 gap-y-6 lg:grid-cols-4">
     
         {properties && properties.map((property) => (
-          <Link to={`/properties/${property._id}`} className='transition duration-300 transform hover:scale-105 cursor-pointer bg-gray-300 rounded-md' key={property._id}>
-
-            <div className="relative">
-            <div className='absolute bottom-0 w-full flex justify-between bg-black bg-opacity-50 px-8 py-1 text-white rounded-se-lg'>
-                <div>{property.auctionType}</div>
+          <Link to={`/properties/${property._id}`} className='relative transition duration-300 transform hover:scale-105 cursor-pointer bg-white shadow-md rounded-md' key={property._id}>
+          <div className='absolute bottom-[110px] right-2 bg-white shadow-md h-10 w-10 rounded-full flex items-center justify-center'>
+                {/* <div>{property.auctionType}</div> */}
                 <Link className='text-primary cursor-pointer'>
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6  cursor-pointer">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" />
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-8">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M17.593 3.322c1.1.128 1.907 1.077 1.907 2.185V21L12 17.25 4.5 21V5.507c0-1.108.806-2.057 1.907-2.185a48.507 48.507 0 0111.186 0z" />
                 </svg>
 
             </Link>
             
             </div>
+            <div className="">
             
-            <img src={`http://localhost:4000/${property.images[0]}`} className="flex rounded-t-md w-full object-cover aspect-square max-h-56" alt="" />
+            
+            <img src={`http://localhost:4000/${property.images[0]}`} className="flex rounded-t-md w-full object-cover aspect-square max-h-40" alt="" />
             </div>
 
-            <div className="px-4">
+            <div className="px-4 py-2">
 
-            <div className='font-bold text-gray-800 pt-2 uppercase'>{property.title}</div>
-            <div className='flex gap-2'>
+            <div className='font-semibold text-slate-800 pt-2 uppercase'>{truncateText(property.title, 3)}</div>
+            <p className='flex gap-2'>
   
-              {property.adress}</div>
-              <div className='font-semibold text-gray-800 pt-1'>{priceFormarter(property.price)}</div>
+              {property.adress}</p>
+              <div className='font-semibold text-primary pt-1 lowercase'>{priceFormarter(property.price)}</div>
             </div>
 
           </Link>

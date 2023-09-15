@@ -56,11 +56,11 @@ function AddHomeForm() {
 
             {page === 3 && (
               <div
-                className={`transition transform ease-in-out duration-300 ${
-                  page === 2 ? "scale-100" : "scale-0"
+                className={`py-4 transition transform ease-in-out duration-300 ${
+                  page === 3 ? "scale-100" : "scale-0"
                 }`}
               >
-                <Step3 />
+                <UploadImages />
               </div>
             )}
 
@@ -72,15 +72,24 @@ function AddHomeForm() {
               >
                 Back
               </button>
-              <button
-                className="border border-primary py-3 px-6 text-primary font-semibold rounded"
-                type="button"
-                onClick={next}
-              >
-                proceed
-              </button>
+
+              {page === 3 && (
+                <button className="border bg-primary py-3 px-6 text-secondary font-semibold rounded">
+                  Submit Property
+                </button>
+              )}
+              {page !== 3 && (
+                <button
+                  className="border border-primary py-3 px-6 text-primary font-semibold rounded"
+                  type="button"
+                  onClick={next}
+                >
+                  Proceed
+                </button>
+              )}
             </div>
           </form>
+          {page}
         </div>
       </div>
     </div>

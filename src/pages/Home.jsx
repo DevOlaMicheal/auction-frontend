@@ -10,7 +10,7 @@ function Home() {
 
   const priceFormarter = (price) => {
     const formattedPrice = price.toLocaleString('en-NG', { style: 'currency', currency: 'NGN' })
-    console.log(formattedPrice)
+    // console.log(formattedPrice)
     return formattedPrice;
   }
 
@@ -22,11 +22,23 @@ function Home() {
     <div>
       <HeroHome />
        <div className='container mx-auto px-2 my-4'>
+
+        <div className="filters flex gap-2 mb-4 sticky top-0">
+        <div className='py-2 px-4 rounded-full border border-primary bg-primary text-white'>All</div>
+          <div className='py-2 px-4 rounded-full border border-primary'>Houses</div>
+          <div className='py-2 px-4 rounded-full border border-primary'>Lands</div>
+          <div></div>
+        </div>
       {error && (<div> {error} </div>)}
       {pending && (
-        <div>loading.....</div>
+        <div>loading data, Please wait...</div>
       )}
+      
+      <div className='grid grid-flow-row gap-3 lg:grid-cols-[1fr_4fr]'>
+          <div className="bg-white mt-2 lg:max-h-[28rem] lg:shadow-md lg:sticky lg:top-5"></div>
         <PropertyList properties={properties} priceFormarter={priceFormarter} />
+
+      </div>
       
     
 

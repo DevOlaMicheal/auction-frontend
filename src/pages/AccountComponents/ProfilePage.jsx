@@ -13,18 +13,7 @@ import UserBio from "../../components/UserBio";
 function ProfilePage() {
   const { user, ready, dispatch } = useUserContext();
 
-  const navigate = useNavigate();
-  const handlelogout = async (e) => {
-    // e.preventDefault()
 
-    const response = await axios.post("/api/auction/logout");
-
-    if (response) {
-      dispatch({ type: "LOGOUT", payload: null });
-      navigate("/");
-    }
-    // console.log(response)
-  };
 
   if (!ready) {
     return <div>loading...</div>;

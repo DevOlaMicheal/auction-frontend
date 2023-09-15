@@ -5,6 +5,9 @@
 @tailwind components;
 @tailwind utilities;
 
+input {
+  @apply focus:outline-none
+}
 input[type='text'],input[type='email'],input[type='password'],input[type='number'],textarea,select {
   @apply border border-gray-400 py-3 px-3 rounded-xl w-full mt-2  mb-4;
 }
@@ -31,4 +34,8 @@ label[class="features"]{
 }
 .box{
   @apply  border rounded-md px-3 py-4 transition duration-200 hover:scale-95
+}
+
+.inactive {
+  @apply text-gray-300
 }

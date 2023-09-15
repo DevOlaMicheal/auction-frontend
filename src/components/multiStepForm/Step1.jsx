@@ -7,10 +7,7 @@ const Step1 = () => {
     setTitle,
     description,
     setDescription,
-    auctionType,
-    setAuctionType,
-    price,
-    setPrice,
+    
     features,
     setFeatures,
   } = useFormContext();
@@ -40,49 +37,7 @@ const Step1 = () => {
             value={description}
             onChange={(e) => setDescription(e.target.value)}
           />
-          <div className="flex gap-3 w-full">
-            <div className="w-1/2">
-              <label className="labelfornew">Auction type</label>
-              <select
-                name=""
-                id=""
-                value={auctionType}
-                onChange={(e) => setAuctionType(e.target.value)}
-              >
-                <option value="" disabled>
-                  Select type
-                </option>
-                <option>Rent</option>
-                <option>For Sale</option>
-              </select>
-            </div>
-            <div className="w-1/2">
-              <label className="labelfornew">Property type</label>
-              <select
-                name=""
-                id=""
-                value={auctionType}
-                onChange={(e) => setAuctionType(e.target.value)}
-              >
-                <option value="" disabled>
-                  Select type
-                </option>
-                <option>Home/House</option>
-                <option>Land</option>
-              </select>
-            </div>
-
-            <div>
-              <label className="labelfornew">Price</label>
-              <input
-                type="number"
-                name=""
-                id=""
-                value={price}
-                onChange={(e) => setPrice(e.target.value)}
-              />
-            </div>
-          </div>
+        
 
           <Features features={features} setFeatures={setFeatures} />
         </div>
