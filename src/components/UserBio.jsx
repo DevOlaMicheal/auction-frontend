@@ -12,7 +12,7 @@ const UserBio = () => {
   }
     
     return (
-        <div className="bg-white w-full p-6 rounded shadow-sm max-h-[32rem] overflow-auto">
+        <div className="bg-white w-full p-6 rounded shadow-sm overflow-auto">
           <div className="">
             <div className="flex items-center justify-center">
               <div className="relative w-36 h-36 overflow-hidden rounded-full border-2 border-gray-300">

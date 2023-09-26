@@ -3,35 +3,47 @@ import React from 'react'
 const Stepper = () => {
   return (
     <div>
-      <div className="flex pb-4 px-4 justify-between">
+      <div className="flex pb-4 px-4 justify-between mt-6">
             <div className="flex flex-col justify-center">
               <div className="flex justify-center">
-                <div className="border border-primary rounded-full flex items-center justify-center h-10 w-10 font-semibold bg-primary text-white">
+                <div className="stepper-active">
                   1
                 </div>
               </div>
               <div className="mt-2 flex">General details</div>
             </div>
-            <div className="flex-auto border-t relative top-6 px-6"></div>
+            <div className="flex-auto border-t border-black relative top-6 px-6"></div>
 
             <div className="flex flex-col justify-center">
               <div className="flex justify-center">
-                <div className="border border-primary rounded-full flex items-center justify-center h-10 w-10 font-semibold text-primary">
+                <div className="stepper-active">
                   2
                 </div>
               </div>
-              <div className="mt-2 flex">Location/images upload</div>
+              <div className="mt-2 flex">Location/extrainfo</div>
             </div>
-            <div className="flex-auto border-t relative top-6 px-6"></div>
+            <div className="flex-auto border-t border-black relative top-6  px-6"></div>
 
             <div className="flex flex-col justify-center">
               <div className="flex justify-center">
-                <div className="border border-primary rounded-full flex items-center justify-center h-10 w-10 font-semibold  text-primary">
+                <div className="stepper-inactive">
                   3
                 </div>
               </div>
-              <div className="mt-2 flex">Confirmation</div>
+              <div className="mt-2 flex">Image upload</div>
             </div>
+
+            <div className="flex-auto border-t border-black relative top-6 px-6"></div>
+
+<div className="flex flex-col justify-center">
+  <div className="flex justify-center">
+    <div className="stepper-inactive">
+      4
+    </div>
+  </div>
+  <div className="mt-2 flex">Checks and Confirmation</div>
+</div>
+
           </div>
     </div>
   )

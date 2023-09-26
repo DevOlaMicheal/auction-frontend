@@ -7,7 +7,6 @@ const Step1 = () => {
     setTitle,
     description,
     setDescription,
-    
     features,
     setFeatures,
   } = useFormContext();

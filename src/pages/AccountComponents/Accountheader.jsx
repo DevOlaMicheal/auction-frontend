@@ -7,7 +7,6 @@ function Accountheader() {
 
   const location = useLocation()
 
-  console.log(location.pathname.split('/')[2])
   let subPage = location.pathname.split('/')[2]
 
   if (subPage === undefined) {

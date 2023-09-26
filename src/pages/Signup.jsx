@@ -21,13 +21,9 @@ function Signup() {
     }
 
   return (
-    <div className='container login-form h-screen p-5 flex flex-col items-center justify-around mx-auto md:max-w-screen-md'>
-        <div className="my-10 rounded-md max-w-md">
-            <div className='py-2 my-2 border-b'>
-            <h1 className='text-1xl font-semibold text-center'>Log in or signup</h1>
-            
-
-            </div>
+    <div className='min-h-screen auth-form p-5 flex items-center justify-around'>
+        <div className="rounded-md max-w-md bg-white shadow-md border-y-primary border-y-2">
+        
             <form action="" className='p-5' onSubmit={handleSignup}>
                 <div className="text-xl font-semibold p-2 text-center">Create an Acccount!</div>
                 { error && (
@@ -38,20 +34,20 @@ function Signup() {
               
              )}
 
-                <input type="text" name="" placeholder='Firstname' value={firstname} onChange={(e) => setFirstname(e.target.value)} />
-                <input type="text" name="" placeholder="Lastname" value={lastname} onChange={(e) => setLastname(e.target.value)} />
-                <input type="email" name="" placeholder='Email' value={email} onChange={(e) => setEmail(e.target.value)}  />
-                <input type="password" name="" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)}  />
+                <input className='input-primary' type="text" name="" placeholder='Firstname' value={firstname} onChange={(e) => setFirstname(e.target.value)} />
+                <input className='input-primary' type="text" name="" placeholder="Lastname" value={lastname} onChange={(e) => setLastname(e.target.value)} />
+                <input className='input-primary' type="email" name="" placeholder='Email' value={email} onChange={(e) => setEmail(e.target.value)}  />
+                <input className='input-primary' type="password" name="" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)}  />
 
                 <button className="authbtn" disabled={pending}>{!pending ? 'signup' : 'processing..'}</button>
                 <div className='text-center'><span className='text-center'>or</span></div>
-                <button className="socialauth">
+                <button className="socialauth" type='button'>
                     <div className="icon"><img src={googleimg} className='h-5' alt="" /></div>
                     <div>continue with Google</div>
                     <div></div>
                 </button>
 
-                <button className="socialauth">
+                <button className="socialauth" type='button'>
                     <div className="icon"><img src={facebookimg} className='h-5' alt="" srcset="" /></div>
                     <div>continue with facebook</div>
                     <div></div>

@@ -110,39 +110,41 @@ const handleFilter = (type) => {
           <img src={loading} alt="" />
         </div>
       )}
+
+        <div className="px-4 grid grid-cols-1 md:grid-cols-2 gap-4">
         {!error && properties.length > 0 &&
           properties.map((property) => (
             <div
-              className="cursor-pointer property-card bg-gray-200 p-5 flex flex-col items-center gap-10 rounded-lg my-4 md:flex-row "
+              className="md:max-h-[15rem] overflow-hidden cursor-pointer property-card bg-white shadow-md flex flex-col md:items-center gap-10 rounded-lg my-4 md:flex-row "
               key={property._id}
             >
-              <div>
-                <img src={`http://localhost:4000/${property.images[0]}`} className="flex h-40 rounded-md w-full object-cover md:w-72" alt="" />
+              <div className="md:w-2/3 md:max-h-full">
+                <img src={`http://localhost:4000/${property.images[0]}`} className="h-52 overflow-hidden rounded w-full object-cover" alt="" />
               </div>
-              <div className="font-semibold text-gray-800">
-                {property.title}
-                <div className="my-2 flex">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    strokeWidth={1.5}
-                    stroke="currentColor"
-                    className="w-6 h-6"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"
-                    />
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"
-                    />
-                  </svg>
+              <div className="px-4">
+                <h2 className="text-lg font-secondary font-semibold">{property.title}</h2>
 
-                  <div>{property.adress}</div>
+                <div className="my-2 flex items-center gap-4 text-primary font-semibold">
+                <div className='flex items-center gap-2'>
+                {/* <div>{property.auctionType}</div> */}
+                <Link className=''>
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-8">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M17.593 3.322c1.1.128 1.907 1.077 1.907 2.185V21L12 17.25 4.5 21V5.507c0-1.108.806-2.057 1.907-2.185a48.507 48.507 0 0111.186 0z" />
+                </svg>
+
+            </Link>
+
+              <p>24</p>
+            
+            </div>
+
+            <div className="border-r border-r-primary h-6"></div>
+            <div>{property.adress}</div>
+          
+                </div>
+
+                <div className="my-2 flex">
+                  
                 </div>
 
                 <div>Added: {property.createdAt}, {property.auctionType} </div>
@@ -152,7 +154,7 @@ const handleFilter = (type) => {
               <div></div>
             </div>
           ))}
-
+</div>
 
           {!pending && properties.length === 0 && (
             <div className="flex items-center justify-center h-52 grow">

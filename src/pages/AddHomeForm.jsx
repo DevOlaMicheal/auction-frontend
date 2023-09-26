@@ -35,11 +35,10 @@ function AddHomeForm() {
   return (
     <div className="bg-slate-100 min-h-screen">
       <div className="container mx-auto p-3">
-        <Accountheader />
         {/* <Accountheader /> */}
-
-        <div className="mx-auto bg-white shadow-md px-2 py-4 rounded-md md:w-2/3">
-          <Stepper />
+        <Accountheader />
+        <Stepper />
+        <div className="mx-auto">
           <div className="border-t"></div>
           <form className="px-2" onSubmit={handleSubmit}>
             {page === 1 && <Step1 />}
@@ -66,7 +65,7 @@ function AddHomeForm() {
 
             <div className="flex justify-between px-2 border-t pt-6">
               <button
-                className="border border-slate-700 py-3 px-6 rounded"
+                className={`border border-slate-700 py-3 px-6 rounded ${page === 1 && 'hidden'}`}
                 onClick={back}
                 type="button"
               >

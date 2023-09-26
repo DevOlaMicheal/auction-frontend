@@ -1,19 +1,33 @@
-@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins&family=Montserrat&family=Quicksand');
+/* @import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@500&display=swap'); */
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+/* 
+.auth-form {
+  background-image: url(./assets/images/homes3.jpg);
+  background-position: center;
+  background-size: cover;
+} */
+
 input {
   @apply focus:outline-none
 }
-input[type='text'],input[type='email'],input[type='password'],input[type='number'],textarea,select {
-  @apply border border-gray-400 py-3 px-3 rounded-xl w-full mt-2  mb-4;
+
+.input-primary {
+  @apply py-3 px-3 border border-slate-400 w-full my-2 rounded-sm
 }
+/* 
+input[type='text'],input[type='email'],input[type='password'],input[type='number'],textarea,select {
+  @apply  
+} */
+
+
 
 button[class="authbtn"] {
-  @apply bg-primary py-3 w-full rounded-lg text-white font-semibold;
+  @apply bg-primary py-4 w-full rounded-lg text-white font-semibold;
 }
 
 button[class="primary"] {
@@ -36,6 +50,10 @@ label[class="features"]{
   @apply  border rounded-md px-3 py-4 transition duration-200 hover:scale-95
 }
 
-.inactive {
-  @apply text-gray-300
+.stepper-inactive {
+  @apply border border-primary rounded-full flex items-center justify-center h-8 w-8 font-semibold  text-primary
+}
+
+.stepper-active {
+  @apply border bg-primary rounded-full flex items-center justify-center h-8 w-8 font-semibold  text-white
 }

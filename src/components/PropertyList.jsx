@@ -1,7 +1,9 @@
 import { Link } from "react-router-dom"
 
 function PropertyList({properties, priceFormarter}) {
-  const uri = "https://auction-testv1.onrender.com/"
+  // const uri = "https://auction-testv1.onrender.com/" || "http://localhost:4000/"
+  const uri = "http://localhost:4000/"
+
 
   const truncateText = (text, max) => {
     const words = text.split(' ')
@@ -12,7 +14,7 @@ function PropertyList({properties, priceFormarter}) {
     return text
   }
   return (
-    <div className="grid grid-cols-2 md:grid-cols-3 gap-x-4 gap-y-6 lg:grid-cols-4">
+    <div className="grid grid-cols-2 md:grid-cols-3 gap-x-4 gap-y-6 lg:grid-cols-4 font-tertiary">
     
         {properties && properties.map((property) => (
           <Link to={`/properties/${property._id}`} className='relative transition duration-300 transform hover:scale-105 cursor-pointer bg-white shadow-md rounded-md' key={property._id}>
@@ -33,12 +35,12 @@ function PropertyList({properties, priceFormarter}) {
             </div>
 
             <div className="px-4 py-2">
+              <div className='font-semibold text-secondary pt-1 lowercase'>{priceFormarter(property.price)}</div>
 
-            <div className='font-semibold text-slate-800 pt-2 uppercase'>{truncateText(property.title, 3)}</div>
+            <div className='text-primary uppercase'>{truncateText(property.title, 3)}</div>
             <p className='flex gap-2'>
   
               {property.adress}</p>
-              <div className='font-semibold text-primary pt-1 lowercase'>{priceFormarter(property.price)}</div>
             </div>
 
           </Link>

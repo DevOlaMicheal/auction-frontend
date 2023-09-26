@@ -7,13 +7,14 @@ export default {
   theme: {
     extend: {
       colors: {
-        primary: '#004e98',
-        secondary: '#ff6b6b'
+        primary: '#000f14',
+        secondary: '#191970'
       },
 
       fontFamily: {
-        primary: ['Quicksand'],
-        work: ['Work Sans']
+        primary: ['Poppins'],
+        secondary: 'Montserrat',
+        tertairy: 'Quicksand'
       }
     },
   },

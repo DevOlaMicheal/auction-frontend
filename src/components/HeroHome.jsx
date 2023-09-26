@@ -6,7 +6,7 @@ function HeroHome() {
     <div>
       <div className="hero w-full mx-0 pb-4bg-cover mb-6 bg-primary h-96 flex items-center justify-center p-4">
         <div className="flex flex-col gap-3">
-          <div className="text-4xl text-center font-bold opacity-100 text-slate-100 shadow-sm">
+          <div className="text-4xl text-center font-bold font-secondary opacity-100 text-slate-100 shadow-sm">
             Buy or Sell landed properties seamlessly
           </div>
           <p className="text-white font-semibold mt-8 flex items-center justify-center  gap-1 mb-2">
