@@ -10,11 +10,11 @@ import axios from "axios";
 import userImg from "../assets/faith.jpg";
 
 function Nav() {
-  const { user, ready, dispatch } = useUserContext()
-  
-  const location = useLocation()
+  const { user, ready, dispatch } = useUserContext();
 
-  let subPage = location.pathname.split('/')[2]
+  const location = useLocation();
+
+  let subPage = location.pathname.split("/")[2];
 
   const [isOpen, setIsOpen] = useState(false);
 
@@ -113,31 +113,27 @@ function Nav() {
 
           {user && (
             <div className="flex gap-4 items-center">
-              
-            <div className="bg-secondary p-1 rounded-full">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 24"
-              fill="currentColor"
-              className="w-7 h-7"
-            >
-              <path
-                fillRule="evenodd"
-                d="M5.25 9a6.75 6.75 0 0113.5 0v.75c0 2.123.8 4.057 2.118 5.52a.75.75 0 01-.297 1.206c-1.544.57-3.16.99-4.831 1.243a3.75 3.75 0 11-7.48 0 24.585 24.585 0 01-4.831-1.244.75.75 0 01-.298-1.205A8.217 8.217 0 005.25 9.75V9zm4.502 8.9a2.25 2.25 0 104.496 0 25.057 25.057 0 01-4.496 0z"
-                clipRule="evenodd"
-              />
-            </svg>
-          </div>
+              <div className="bg-secondary p-1 rounded-full">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  className="w-7 h-7"
+                >
+                  <path
+                    fillRule="evenodd"
+                    d="M5.25 9a6.75 6.75 0 0113.5 0v.75c0 2.123.8 4.057 2.118 5.52a.75.75 0 01-.297 1.206c-1.544.57-3.16.99-4.831 1.243a3.75 3.75 0 11-7.48 0 24.585 24.585 0 01-4.831-1.244.75.75 0 01-.298-1.205A8.217 8.217 0 005.25 9.75V9zm4.502 8.9a2.25 2.25 0 104.496 0 25.057 25.057 0 01-4.496 0z"
+                    clipRule="evenodd"
+                  />
+                </svg>
+              </div>
               <div className="flex gap-2 items-center py-2 px-4">
-                
-                <div className="bg-secondary p-1 rounded-full">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-7 h-7">
-  <path fillRule="evenodd" d="M7.5 6a4.5 4.5 0 119 0 4.5 4.5 0 01-9 0zM3.751 20.105a8.25 8.25 0 0116.498 0 .75.75 0 01-.437.695A18.683 18.683 0 0112 22.5c-2.786 0-5.433-.608-7.812-1.7a.75.75 0 01-.437-.695z" clipRule="evenodd" />
-</svg>
-
-
-                </div>
-          
+                <Avatar
+                  style={{
+                    backgroundColor: "#003547",
+                  }}
+                  icon={<UserOutlined />}
+                />
 
                 {user && (
                   <Dropdown
@@ -173,47 +169,30 @@ function Nav() {
           </div>
 
           <div className="flex items-center gap-2">
-          <div className="bg-secondary p-1 rounded-full">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 24"
-              fill="currentColor"
-              className="w-7 h-7"
-            >
-              <path
-                fillRule="evenodd"
-                d="M5.25 9a6.75 6.75 0 0113.5 0v.75c0 2.123.8 4.057 2.118 5.52a.75.75 0 01-.297 1.206c-1.544.57-3.16.99-4.831 1.243a3.75 3.75 0 11-7.48 0 24.585 24.585 0 01-4.831-1.244.75.75 0 01-.298-1.205A8.217 8.217 0 005.25 9.75V9zm4.502 8.9a2.25 2.25 0 104.496 0 25.057 25.057 0 01-4.496 0z"
-                clipRule="evenodd"
-              />
-            </svg>
-          </div>
-
-            
             <div className="py-1 px-2 flex gap-1  items-center">
-            <img src={naij} className="h-4" alt="" />
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 20 20"
-              fill="currentColor"
-              className={`${!user && 'hidden'} w-5 h-5`}
-            >
-              <path
-                fillRule="evenodd"
-                d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
-                clipRule="evenodd"
-              />
-            </svg>
-          </div>
+              <img src={naij} className="h-4" alt="" />
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 20 20"
+                fill="currentColor"
+                className={`${!user && "hidden"} w-5 h-5`}
+              >
+                <path
+                  fillRule="evenodd"
+                  d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
+                  clipRule="evenodd"
+                />
+              </svg>
+            </div>
             <div className="mr-3 flex gap-2 items-center">
               <Avatar
-              style={{
-                backgroundColor: "#003547",
-              }}
-              icon={<UserOutlined />}
-            />
+                style={{
+                  backgroundColor: "#003547",
+                }}
+                icon={<UserOutlined />}
+              />
               {user && <p className="font-secondary">Hi, {user.firstname}</p>}
-              
-              </div>
+            </div>
 
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -255,34 +234,45 @@ function Nav() {
             !isOpen ? "hidden" : "flex"
           }`}
         >
-
-          <div className="flex flex-col gap-3 px-4 w-full">
+          <div
+            className={`${user ? "hidden" : "flex"} flex-col gap-3 px-4 w-full`}
+          >
             <div>Home</div>
             <div>Sell</div>
             <div>FAQs</div>
-            
-          <Link to={'/login'}  className="w-full py-2 bg-secondary text-white text-center rounded">Signin</Link>
-          
-          <Link to={'/register'}  className="w-full py-2 border border-secondary text-white text-center rounded">Signup</Link>
+
+            <Link
+              to={"/login"}
+              className="w-full py-2 bg-secondary text-white text-center rounded"
+            >
+              Signin
+            </Link>
+
+            <Link
+              to={"/register"}
+              className="w-full py-2 border border-secondary text-white text-center rounded"
+            >
+              Signup
+            </Link>
           </div>
-      
-      {
-        user && (
 
-          <div className="flex flex-col gap-3 px-4 w-full">
+          {user && (
+            <div className="flex flex-col gap-3 px-4 w-full">
+              {items.map((item) => (
+                <div className="" key={item.key}>
+                  {item.label}
+                </div>
+              ))}
 
-          {
-            items.map(item => (
-              <div className="" key={item.key}>{item.label}</div>
-            ))
-          }
-
-          <button className="w-full py-2 bg-secondary text-white text-center rounded"  onClick={handlelogout}>Signout</button>
-       </div>
-        )
-      }
+              <button
+                className="w-full py-2 bg-secondary text-white text-center rounded"
+                onClick={handlelogout}
+              >
+                Signout
+              </button>
+            </div>
+          )}
         </div>
-
       </div>
     </div>
   );

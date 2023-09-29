@@ -38,51 +38,49 @@ function Home() {
       
       <div className='gap-3 grid lg:grid-cols-[1fr_4fr]'>
         
-          <div className="hidden absolute bg-white lg:max-h-[35rem] top-20 lg:shadow-md lg:sticky p-4 md:flex">
-              <div className="flex flex-col gap-4">
+        <div className='hidden bg-white max-h-[30rem] shadow-md p-4 sticky top-24 lg:block'>
+        <div className="flex flex-col gap-4">
                   <div className="categories">
                     <h2 className="text-lg font-semibold">Categories</h2>
-                    <div className="flex gap-4 px-4 py-2">
+                    <div className="flex gap-4 pl-4 py-2">
                       <input type="checkbox" className="bg-primary" name="" id="" />
                       <div className="">All</div>
                     </div>
 
-                    <div className="flex gap-4 px-4 pb-2">
+                    <div className="flex gap-4 pl-4 pb-2">
                       <input type="checkbox" name="" id="" />
                       <div className="">Student Apartment</div>
                     </div>
 
-                    <div className="flex gap-4 px-4 pb-2">
+                    <div className="flex gap-4 pl-4 pb-2">
                       <input type="checkbox" name="" id="" />
                       <div className="">Bungalow</div>
                     </div>
 
-                    <div className="flex gap-4 px-4 pb-2">
+                    <div className="flex gap-4 pl-4 pb-2">
                       <input type="checkbox" name="" id="" />
                       <div className="">Self Con</div>
                     </div>
                   </div>
 
-                  <div className="border border-b-primary w-full"></div>
-                  <div className=''>
+                    <div> 
                     <h2 className="text-lg font-semibold">Price</h2>
-                    <div className="flex gap-4 items-center">
+                        <div className='grid grid-cols-3 gap-1'>
+                          <input type="text" className='border-b border-primary text-center' placeholder='Min' />
+                          <p className='text-center'>To</p>
+                          <input type="text" className='border-b border-primary text-center' placeholder='Max' />
 
-                    <input type="number" className=" px-2 py-2" name="" id="" placeholder="min" />
-                    <p className='pb-3 font-semibold text-xl'>to</p>
-                    <input type="number" className='border-primary px-2 py-2' name="" id="" placeholder="max" />
+                        </div>
                     </div>
-                  </div>
 
-                  <div className="border border-b-primary w-full my-2"></div>
 
               </div>
 
-
-          </div>
+        </div>
+          
             
           
-          <div>
+          <div className='max-w-2/3'>
           <PropertyList properties={properties} priceFormarter={priceFormarter} />
           <PropertyList properties={properties} priceFormarter={priceFormarter} />
           <PropertyList properties={properties} priceFormarter={priceFormarter} />

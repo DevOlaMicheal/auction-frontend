@@ -1,9 +1,24 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useUserContext } from '../hooks/useuserContext';
 import profileImg from "../assets/faith.jpg";
 
 const UserBio = () => {
   const { user} = useUserContext();
+
+  const [disabled, setDisabled] = useState(true)
+
+  const handleDisabled = () => {
+    setDisabled(!disabled)
+  }
+
+  const [firstname, setFirstname] = useState(user.firstname)
+  const [lastname, setLastname] = useState(user.lastname)
+  const [email, setEmail] = useState(user.email)
+  const [bio, setBio] = useState()
+  const [call, setCall] = useState()
+  const [whatsapp, setWhatsapp] = useState()
+
+
 
   const changeDp = (e) => {
     const file = e.target.files
@@ -52,7 +67,9 @@ const UserBio = () => {
             <h4 className="text-lg font-semibold text-slate-800">Your bio</h4>
              
               <div>
-                <button className="py-2 px-4 border border-primary rounded-full">Edit Profile</button>
+                <button className="py-2 px-4 bg-primary text-white rounded-full" onClick={handleDisabled}>
+                   {disabled ? 'Edit Profile' : 'Save changes'}
+                </button>
               </div>
               </div>
             <div className="">
@@ -61,12 +78,21 @@ const UserBio = () => {
 
               <div className="text">
 
-               <form>
-                <input type="text" value={user.firstname + ' ' + user.lastname} />
-                <input type="text" value={user.email} />
-                <input type="text" value="" placeholder="Add your Call phonenumber"/>
-                <input type="text" value="" placeholder="Add Your whatsapp phonenubmer"/>
-                <input type="password" value={user.password} placeholder="Password"/>
+               <form className='flex flex-col gap-6'>
+
+              
+                <input type="text" className="bio" value={firstname} onChange={(e) => setFirstname(e.target.value)}  disabled={disabled} />
+                <input type="text" className="bio" value={lastname} onChange={(e) => setLastname(e.target.value)}  disabled={disabled} />
+
+                
+                <input type="text" className="bio" value={email} onChange={(e) => setEmail(e.target.value)}  disabled={disabled} />
+
+                <input type="text" className="bio" value={bio} onChange={(e) => setBio(e.target.value)} placeholder='Short bio e.g house owner/house agent/house hunting'  disabled={disabled} />
+
+                
+                <input type="number" className="bio" value={call} onChange={e => setCall(e.target.value)} placeholder="Add your Call phonenumber" disabled={disabled} />
+                <input type="text" className="bio" value={whatsapp} placeholder="Add Your whatsapp phonenubmer" disabled={disabled} />
+                <input type="password" className="bio"  placeholder="Password" disabled={disabled} />
 
 
                </form>

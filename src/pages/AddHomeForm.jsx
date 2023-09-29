@@ -37,9 +37,10 @@ function AddHomeForm() {
       <div className="container mx-auto p-3">
         {/* <Accountheader /> */}
         <Accountheader />
+
+        
         <Stepper />
-        <div className="mx-auto">
-          <div className="border-t"></div>
+        <div className="container mx-auto">
           <form className="px-2" onSubmit={handleSubmit}>
             {page === 1 && <Step1 />}
 
@@ -72,12 +73,14 @@ function AddHomeForm() {
                 Back
               </button>
 
-              {page === 3 && (
-                <button className="border bg-primary py-3 px-6 text-secondary font-semibold rounded">
+              {page === 4 && (
+                <button className="border bg-primary py-3 px-6 text-white font-semibold rounded">
                   Submit Property
                 </button>
               )}
-              {page !== 3 && (
+              {page !== 4 && (
+
+                <div className="flex w-full justify-end">
                 <button
                   className="border border-primary py-3 px-6 text-primary font-semibold rounded"
                   type="button"
@@ -85,10 +88,11 @@ function AddHomeForm() {
                 >
                   Proceed
                 </button>
+                </div>
               )}
             </div>
           </form>
-          {page}
+        
         </div>
       </div>
     </div>

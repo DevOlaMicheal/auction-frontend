@@ -122,7 +122,7 @@ const handleFilter = (type) => {
                 <img src={`http://localhost:4000/${property.images[0]}`} className="h-52 overflow-hidden rounded w-full object-cover" alt="" />
               </div>
               <div className="px-4">
-                <h2 className="text-lg font-secondary font-semibold">{property.title}</h2>
+                <h2 className="text-lg font-primary font-semibold text-gray-700">{property.title}</h2>
 
                 <div className="my-2 flex items-center gap-4 text-primary font-semibold">
                 <div className='flex items-center gap-2'>

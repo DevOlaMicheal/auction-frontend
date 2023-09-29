@@ -5,6 +5,8 @@ import { Link } from 'react-router-dom';
 
 const Wallet = () => {
 
+    
+
     const [see, setSee] = useState(false)
 
     const handleSee = () => setSee(!see)
@@ -15,7 +17,7 @@ const Wallet = () => {
             <div className="wallet pt-4 pb-6 md:w-1/2">
                 
             
-                 <h1 className="pl-2 pb-2 text-xl font-semibold text-slate-800">Auction Ads Account</h1>
+                 <h1 className="pl-2 pb-2 text-xl font-semibold text-slate-800">Auction Ads Wallet</h1>
                 <div className="relative border bg-black rounded-md h-44 overflow-hidden">
                  
                  <img src={sprinkles} className="top-0" alt="" />

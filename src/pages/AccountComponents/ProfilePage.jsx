@@ -24,13 +24,14 @@ function ProfilePage() {
   }
 
   return (
-    <div className="container mx-auto min-h-screen">
+    <div className="container mx-auto px-3 min-h-screen">
       <Accountheader />
 
       <div className="grid grid-cols-1  gap-6 lg:grid-cols-[1fr_2fr]">
+        
         <UserBio />
 
-        <div className="bg-white w-full p-6 rounded shadow-md"> 
+        <div className="bg-white max-h-1/2 overflow-hidden w-full p-6 rounded shadow-md"> 
 
           <Wallet />
           <Stats />

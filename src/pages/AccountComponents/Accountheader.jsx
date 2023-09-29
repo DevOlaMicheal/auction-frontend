@@ -27,9 +27,9 @@ function Accountheader() {
     return classes;
   };
   return (
-    <div>
+    <div className="container mx-auto ">
         
-      <nav className="container mx-auto flex justify-center gap-4 mt-9 items-center mb-9">
+      <nav className="flex flex-wrap justify-center gap-4 mt-9 items-center mb-9">
         <Link className={activeClass("profile")} to="/account">
           <svg
             xmlns="http://www.w3.org/2000/svg"

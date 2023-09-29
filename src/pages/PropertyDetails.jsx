@@ -6,7 +6,7 @@ import PropertyInfo from '../components/PropertyInfo'
 
 function PropertyDetails() {
 
-    const {id} = useParams()
+  const {id} = useParams()
   const {properties, pending, error} = useFetch(`api/auction/property/${id}`)
 
 

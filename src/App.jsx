@@ -16,12 +16,9 @@ import VerifyEmail from "./pages/VerifyEmail"
 import { FormContextProvider } from "./context/FormContext"
 
 
-axios.defaults.baseURL = 'https://auction-testv1.onrender.com'
+// axios.defaults.baseURL = 'https://auction-testv1.onrender.com'
 
-// axios.defaults.baseURL = 'http://localhost:4000'
-
-
-
+axios.defaults.baseURL = 'http://localhost:4000'
 axios.defaults.withCredentials = true
 
 function App() {
