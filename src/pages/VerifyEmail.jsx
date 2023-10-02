@@ -35,9 +35,9 @@ function VerifyEmail() {
              )}
 
             </div>
-            <form action="" className='p-5' onSubmit={handleVerify}>
+            <form className='p-5' onSubmit={handleVerify}>
                 <div className="text-xl font-semibold p-2 text-gray-600">Youre almost there, please input the verification code sent to your mail</div>
-                <input type="text" name="" placeholder="Verification Code" value={code} onChange={(e) => setCode(e.target.value)}  />
+                <input type="text" className="input-primary" name="" placeholder="Verification Code" value={code} onChange={(e) => setCode(e.target.value)}  />
                 <button className="authbtn" disabled={pending}>{!pending ? 'verify' : 'processing..'}</button>
                 
             </form>
