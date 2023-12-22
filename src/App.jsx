@@ -16,9 +16,9 @@ import VerifyEmail from "./pages/VerifyEmail"
 import { FormContextProvider } from "./context/FormContext"
 
 
-axios.defaults.baseURL = 'https://auction-testv1.onrender.com'
+// axios.defaults.baseURL = 'https://auction-testv1.onrender.com'
 
-//axios.defaults.baseURL = 'http://localhost:4000'
+axios.defaults.baseURL = 'http://localhost:4000'
 axios.defaults.withCredentials = true
 
 function App() {
@@ -29,7 +29,7 @@ function App() {
       return (
         <div className="min-h-screen bg-primary flex flex-col items-center justify-center text-white"> 
           <div className="font-bold text-white text-2xl font-primary">Auction</div>
-        <div className="font-primary font-semibold text-lg">Buy | Sell | Explore</div>
+        <div className="font-primary font-semibold text-lg">Seamless property management</div>
 
         <div className="font-primary font-semibold text-lg">please wait, loading...</div>
         </div>
@@ -40,9 +40,7 @@ function App() {
   return (
 
     <div className="font-primary">
-
-  
-
+      
       <BrowserRouter>
       
       <div className="min-h-screen bg-slate-100">

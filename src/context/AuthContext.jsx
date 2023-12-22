@@ -26,17 +26,14 @@ export const UserContextProvider = ({children}) => {
 
     useEffect(() => {
         
-            if(!state.user){
-                axios.get('/api/auction/profile').then(({data}) => {
-                    dispatch({type: "LOGIN", payload: data})
-                    setReady(true)
+        const user = JSON.parse(localStorage.getItem('accessToken'))
+        setReady(true)
 
-                }).catch(err => {
-                    setReady(true)
-                    console.log(err.response)
-                })
-            }
+        if(user) {
+            dispatch({type: "LOGIN", payload: user})
 
+        }
+           
 
     }, [])
 

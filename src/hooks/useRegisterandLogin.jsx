@@ -50,8 +50,7 @@ export const useRegisterandLogin = () => {
             
             setPending(false)
             console.log(response)
-            dispatch({type: 'LOGIN', payload: user})
-            navigate('/')
+            navigate('/register')
 
             // console.log(user)
 
@@ -73,26 +72,37 @@ export const useRegisterandLogin = () => {
                 password
             })
     
-            const {user} = response.data
+            const {user, token} = response.data
         
+            console.log(response)
 
             setPending(false)
             // console.log(user)
             dispatch({type: 'LOGIN', payload: user})
+
+            localStorage.setItem('accessToken', JSON.stringify(user));
+
             setReady(true)
-            navigate('/account')
+            // navigate('/account')
         
             
         
         } catch (error) {
             const {data} = error.response
-            // console.log(data)
+            console.log(data)
             setError(data.error)
             setPending(false)
     
         }
     
         }
+
+
+
+    const logout = () => {
+        localStorage.removeItem('accessToken')
+        dispatch({type: 'LOGOUT'})
+    }
     
-    return {register, login, verifyEmail, error, pending}
+    return {register, login, verifyEmail, error, pending, logout}
 }

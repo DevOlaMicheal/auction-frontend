@@ -22,13 +22,13 @@ function Home() {
 
   return (
     <div>
-      <HeroHome />
-       <div className='container mx-auto px-2 my-4 min-h-screen'>
+      {/* <HeroHome /> */}
+       <div className='container mx-auto px-2 my-6 min-h-screen'>
 
         <div className="filters flex gap-2 mb-4 sticky">
         <div className='py-2 px-4 rounded-full border border-primary bg-primary text-white'>All</div>
-          <div className='py-2 px-4 rounded-full border border-primary'>Houses</div>
-          <div className='py-2 px-4 rounded-full border border-primary'>Lands</div>
+          <div className='py-2 px-4 rounded-full border border-primary'>On sale</div>
+          <div className='py-2 px-4 rounded-full border border-primary'>Rent</div>
           <div></div>
         </div>
       {error && (<div> {error} </div>)}
